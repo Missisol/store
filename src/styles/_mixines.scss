@@ -1,0 +1,59 @@
+@import 'variables';
+
+// Mixins for media
+@mixin desktop {
+    @media screen and (min-width: $desktop-width) {
+        @content
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-width) and (max-width: $desktop-width - 1px) {
+        @content
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: $tablet-width - 1px) {
+        @content
+    }
+}
+
+@mixin h1-desktop {
+    font-size: 72px;
+    line-height: 72px;
+    font-weight: bold;
+}
+
+@mixin h2-desktop {
+    font-size: 36px;
+    line-height: 43px;
+    font-weight: 300;
+}
+
+@mixin h4-desktop {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+@mixin h3-desktop {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+@mixin button {
+    padding: 10px 12px;
+    border-radius: 4px;
+    color: $violet;
+    background: $rose;
+    font-size: 14px;
+    line-height: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+@mixin block-title {
+    text-align: center;
+    @include h2-desktop;
+    margin-bottom: 20px;
+}
