@@ -6,7 +6,18 @@
     flex-direction: column;
     width: 260px;
     height: 360px;
-    margin-bottom: 40px;
+
+    @include desktop {
+        margin-bottom: 50px;
+    }
+
+    @include tablet {
+        margin-bottom: 50px;
+    }
+
+    @include phone {
+        margin-bottom: 36px;
+    }
 
     &__discount-wrap {
         align-self: flex-start;
