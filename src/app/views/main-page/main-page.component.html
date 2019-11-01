@@ -1,6 +1,118 @@
-<app-slider></app-slider>
-<app-popular></app-popular>
-<app-categories></app-categories>
-<app-new-goods></app-new-goods>
-<app-recent></app-recent>
+<div class="wrap">
+    <div class="slider container">
+        <h1 class="slider__title">
+            iPhone 11 Pro max
+        </h1>
+        <div class="slider__subtitle">
+            Самый быстрый процессор iPhone. Профессио­нальные кадры.
+        </div>
+        <img src="../../../assets/images/slider/camera.jpg" alt="camera" class="slider__img">
+    </div>
+</div>
+
+<div class="popular container">
+    <h2 class="popular__title">
+        Популярные товары
+    </h2>
+    <div class="popular__container">
+        <app-product-card></app-product-card>
+        <app-product-card></app-product-card>
+        <app-product-card></app-product-card>
+        <app-product-card></app-product-card>
+        <app-product-card></app-product-card>
+        <app-product-card></app-product-card>
+        <app-product-card></app-product-card>
+        <app-product-card></app-product-card>
+    </div>
+</div>
+
+<div class="category">
+    <div class="category__block category__block_one"></div>
+    <div class="category__block category__block_two"></div>
+    <div class="category__block category__block_three"></div>
+    <div class="category__block category__block_four"></div>
+    <div class="category__wrap category__container">
+        <section class="category__content category__content_one">
+            <div class="category__inner-wrap">
+                <h4 class="category__title">AirPods </h4>
+                <div class="category__text">
+                    Больше звука. Больше невесомости.
+                </div>
+                <div class="category__button">Выбрать</div>
+            </div>
+            <div class="category__price">от 13 500 &#8381;</div>
+        </section>
+        <section class="category__content category__content_two">
+            <div class="category__inner-wrap">
+                <h4 class="category__title">AppleWatch</h4>
+                <div class="category__text">
+                    Таких часов вы еще не видели.
+                </div>
+                <div class="category__button">Выбрать</div>
+            </div>
+            <div class="category__price">от 24 500 &#8381;</div>
+        </section>
+    </div>
+    <div class="category__wrap category__container">
+        <section class="category__content category__content_three">
+            <div class="category__inner-wrap">
+                <h4 class="category__title">AppleTV</h4>
+                <div class="category__text">
+                    Телевидение. Наше все.
+                </div>
+                <div class="category__button">Выбрать</div>
+            </div>
+            <div class="category__price">от 24 500 &#8381;</div>
+        </section>
+        <section class="category__content category__content_four">
+            <div class="category__inner-wrap">
+                <h4 class="category__title">Аксессуары</h4>
+                <div class="category__text">
+                    Сертифицированная продукция высокого качества.
+                </div>
+                <div class="category__button">Выбрать</div>
+            </div>
+            <div class="category__price">от 2 500 &#8381;</div>
+        </section>
+    </div>
+</div>
+
+<div class="new-goods container">
+    <h2 class="new-goods__title">
+        Новинки
+    </h2>
+    <div class="new-goods__container">
+        <app-product-card></app-product-card>
+        <app-product-card></app-product-card>
+        <app-product-card></app-product-card>
+        <app-product-card></app-product-card>
+    </div>
+</div>
+
+<div class="gadgets container">
+    <h2 class="gadgets__title">
+        Гаджеты
+    </h2>
+    <div class="gadgets__container">
+        <app-gadget-card></app-gadget-card>
+        <app-gadget-card></app-gadget-card>
+        <app-gadget-card></app-gadget-card>
+        <app-gadget-card></app-gadget-card>
+        <app-gadget-card></app-gadget-card>
+        <app-gadget-card></app-gadget-card>
+    </div>
+</div>
+
+<div class="recent container">
+    <h2 class="recent__title">
+        Недавно вы смотрели
+    </h2>
+    <div class="recent__container">
+        <app-product-card></app-product-card>
+        <app-product-card></app-product-card>
+        <app-product-card></app-product-card>
+        <app-product-card></app-product-card>
+    </div>
+</div>
+
 <app-seo></app-seo>
