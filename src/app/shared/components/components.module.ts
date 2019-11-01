@@ -6,6 +6,7 @@ import { HeaderTopComponent } from './header/header-top/header-top.component';
 import { HeaderBottomComponent } from './header/header-bottom/header-bottom.component';
 import { FooterTopComponent } from './footer/footer-top/footer-top.component';
 import { FooterBottomComponent } from './footer/footer-bottom/footer-bottom.component';
+import {SeoComponent} from '@shared/components/seo/seo.component';
 
 const components = [
     HeaderComponent,
@@ -13,7 +14,8 @@ const components = [
     HeaderTopComponent,
     HeaderBottomComponent,
     FooterTopComponent,
-    FooterBottomComponent
+    FooterBottomComponent,
+    SeoComponent
 ];
 
 @NgModule({
