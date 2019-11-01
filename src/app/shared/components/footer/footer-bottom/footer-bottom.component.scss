@@ -1,0 +1,29 @@
+@import "../../../../../styles/variables";
+@import "../../../../../styles/mixines";
+
+.footer-bottom {
+    height: 133px;
+    background: $text-light;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding: 36px 0;
+    }
+
+    &__policy {
+        color: $white;
+        font-size: 14px;
+        line-height: 15px;
+    }
+
+    &__social-wrap {
+        display: flex;
+    }
+
+    &__icon {
+        margin-left: 16px;
+    }
+}
