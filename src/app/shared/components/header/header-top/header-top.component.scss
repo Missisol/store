@@ -67,6 +67,28 @@
         align-items: center;
         height: 100%;
         color: $white;
+
+        @include desktop {
+            &:hover {
+                color: $menu-hover;
+            };
+        }
+
+        @include tablet {
+            &:hover {
+                color: $menu-hover;
+            };
+        }
+
+        @include phone {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: $white;
+            font-size: 18px;
+            line-height: 21px;
+            margin-bottom: 10px;
+        }
     }
 
     &__cart-wrap {
@@ -122,6 +144,14 @@
         bottom: 95%;
         left: 0;
         cursor: pointer;
+
+        @include desktop {
+            display: none;
+        }
+
+        @include tablet {
+            display: none;
+        }
     }
 
     &__menu {
@@ -144,16 +174,6 @@
         transition: transform .3s;
         will-change: transform;
         backface-visibility: hidden;
-    }
-
-    &__item {
-        display: block;
-        text-align: center;
-        text-decoration: none;
-        color: $white;
-        font-size: 18px;
-        line-height: 21px;
-        margin-bottom: 10px;
     }
 
     &__check:checked ~ .nav__back {

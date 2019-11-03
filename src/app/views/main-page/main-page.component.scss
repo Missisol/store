@@ -209,7 +209,7 @@
             margin: 0 auto;
         }
 
-        @include tablet {
+        @include phone {
             width: 80%;
             height: 221px;
             margin: 0 auto;
@@ -290,7 +290,7 @@
         align-items: flex-start;
 
         @include desktop {
-            width: 50%;
+            width: 270px;
         }
 
         @include tablet {

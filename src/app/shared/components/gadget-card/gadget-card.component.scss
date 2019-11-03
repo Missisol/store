@@ -52,6 +52,22 @@
         border-radius: 4px;
         color: #2988E0;
         padding: 6px 9px;
+
+        @include desktop {
+            &:hover {
+                color: $white;
+                background: #2988E0;
+                opacity: 0.7;
+            }
+        }
+
+        @include tablet {
+            &:hover {
+                color: $white;
+                background: #2988E0;
+                opacity: 0.7;
+            }
+        }
     }
 
     &__photo {

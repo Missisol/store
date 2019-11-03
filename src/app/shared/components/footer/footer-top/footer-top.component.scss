@@ -116,6 +116,18 @@
         line-height: 16px;
         margin-bottom: 4px;
 
+        @include desktop {
+            &:hover {
+                color: $menu-hover;
+            }
+        }
+
+        @include tablet {
+            &:hover {
+                color: $menu-hover;
+            }
+        }
+
         @include phone {
             line-height: 0;
             opacity: 0;
