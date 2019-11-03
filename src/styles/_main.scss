@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixines';
 
 @font-face {
     font-family: 'SF UI Display';
@@ -25,10 +26,22 @@ body {
     font-family: 'SF UI Display', sans-serif;
     font-size: $base-font-size;
     line-height: $base-line-height;
+    color: $text-light;
     font-weight: 400;
 }
 
 .container {
-    max-width: $container-desktop-width;
     margin: 0 auto;
+
+    @include desktop {
+        width: $container-desktop-width;
+    }
+
+    @include tablet {
+        width: $container-tablet-width;
+    }
+
+    @include phone {
+        width: $container-phone-width;
+    }
 }

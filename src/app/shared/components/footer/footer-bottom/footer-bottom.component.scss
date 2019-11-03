@@ -5,6 +5,17 @@
     height: 133px;
     background: $text-light;
 
+    @include phone {
+        height: 84px;
+    }
+
+    &__logo {
+
+        @include phone {
+            display: none;
+        }
+    }
+
     &__inner {
         display: flex;
         justify-content: space-between;
@@ -13,14 +24,38 @@
         padding: 36px 0;
     }
 
-    &__policy {
+    &__policy-wrap {
         color: $white;
         font-size: 14px;
         line-height: 15px;
+
+        @include phone {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+
+    &__policy {
+
+        @include phone {
+            margin-bottom: 14px;
+        }
+    }
+
+    &__line {
+
+        @include phone {
+            display: none;
+        }
     }
 
     &__social-wrap {
         display: flex;
+
+        @include phone {
+            display: none;
+        }
     }
 
     &__icon {

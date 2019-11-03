@@ -6,15 +6,18 @@
         <div class="slider__subtitle">
             Самый быстрый процессор iPhone. Профессио­нальные кадры.
         </div>
-        <img src="../../../assets/images/slider/camera.jpg" alt="camera" class="slider__img">
+        <img src="../../../assets/images/slider/camera.jpg"
+             alt="camera" class="slider__img slider__img_desktop">
+        <img src="../../../assets/images/slider/camera-mb.jpg"
+             alt="camera" class="slider__img slider__img_phone">
     </div>
 </div>
 
-<div class="popular container">
-    <h2 class="popular__title">
+<div class="goods container">
+    <h2 class="goods__title">
         Популярные товары
     </h2>
-    <div class="popular__container">
+    <div class="goods__container">
         <app-product-card></app-product-card>
         <app-product-card></app-product-card>
         <app-product-card></app-product-card>
@@ -27,11 +30,7 @@
 </div>
 
 <div class="category">
-    <div class="category__block category__block_one"></div>
-    <div class="category__block category__block_two"></div>
-    <div class="category__block category__block_three"></div>
-    <div class="category__block category__block_four"></div>
-    <div class="category__wrap category__container">
+    <div class="category__block category__block_one">
         <section class="category__content category__content_one">
             <div class="category__inner-wrap">
                 <h4 class="category__title">AirPods </h4>
@@ -42,6 +41,8 @@
             </div>
             <div class="category__price">от 13 500 &#8381;</div>
         </section>
+    </div>
+    <div class="category__block category__block_two">
         <section class="category__content category__content_two">
             <div class="category__inner-wrap">
                 <h4 class="category__title">AppleWatch</h4>
@@ -53,7 +54,7 @@
             <div class="category__price">от 24 500 &#8381;</div>
         </section>
     </div>
-    <div class="category__wrap category__container">
+    <div class="category__block category__block_three">
         <section class="category__content category__content_three">
             <div class="category__inner-wrap">
                 <h4 class="category__title">AppleTV</h4>
@@ -64,6 +65,8 @@
             </div>
             <div class="category__price">от 24 500 &#8381;</div>
         </section>
+    </div>
+    <div class="category__block category__block_four">
         <section class="category__content category__content_four">
             <div class="category__inner-wrap">
                 <h4 class="category__title">Аксессуары</h4>
@@ -77,11 +80,11 @@
     </div>
 </div>
 
-<div class="new-goods container">
-    <h2 class="new-goods__title">
+<div class="goods container">
+    <h2 class="goods__title">
         Новинки
     </h2>
-    <div class="new-goods__container">
+    <div class="goods__container">
         <app-product-card></app-product-card>
         <app-product-card></app-product-card>
         <app-product-card></app-product-card>
@@ -103,11 +106,11 @@
     </div>
 </div>
 
-<div class="recent container">
-    <h2 class="recent__title">
+<div class="goods container">
+    <h2 class="goods__title">
         Недавно вы смотрели
     </h2>
-    <div class="recent__container">
+    <div class="goods__container">
         <app-product-card></app-product-card>
         <app-product-card></app-product-card>
         <app-product-card></app-product-card>

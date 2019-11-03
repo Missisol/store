@@ -4,12 +4,21 @@
 .seo {
     display: flex;
     flex-direction: column;
-    margin-top: 64px;
     margin-bottom: 66px;
 
     &__title {
         @include h2-desktop;
         margin-bottom: 20px;
+
+        @include tablet {
+            margin-bottom: 16px;
+        }
+
+        @include phone {
+            font-size: 24px;
+            line-height: 29px;
+            margin-bottom: 24px;
+        }
     }
 
     &__text {
@@ -18,12 +27,55 @@
         height: 60px;
         overflow: hidden;
         margin-bottom: 22px;
+        order: 0;
+
+        @include phone {
+            font-size: 14px;
+            line-height: 20px;
+            height: 80px;
+            margin-bottom: 12px;
+        }
     }
 
     &__wrap {
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__input {
+        display: none;
+    }
+
+    &__label {
+        position: relative;
+        order: 1;
+    }
+
+    &__label:after {
+        content: "";
+        position: absolute;
+        background: url('../../../../assets/images/seo/arrow.svg') no-repeat;
+        height: 30px;
+
+        @include desktop {
+            width: 28px;
+            background-size: 28px;
+        }
+
+        @include tablet {
+            width: 20px;
+            background-size: 20px;
+        }
+
+        @include phone {
+            width: 20px;
+            background-size: 20px;
+        }
+    }
+
+    &__input:checked + .seo__text {
+        height: auto;
     }
 }
+

@@ -5,17 +5,17 @@
     display: flex;
     flex-direction: column;
     width: 260px;
-    height: 360px;
 
     @include desktop {
         margin-bottom: 50px;
     }
 
     @include tablet {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
 
     @include phone {
+        width: 222px;
         margin-bottom: 36px;
     }
 
@@ -27,28 +27,67 @@
         line-height: 12px;
         background: $orange;
         margin-bottom: 9px;
+
+        @include phone {
+            padding: 4px 5px;
+            margin-bottom: 0;
+        }
     }
 
     &__photo {
         width: 100%;
-        height: 222px;
         margin-bottom: 12px;
+
+        @include desktop {
+            &_phone {
+                display: none;
+            }
+        }
+
+        @include tablet {
+            &_phone {
+                display: none;
+            }
+        }
+
+        @include phone {
+            &_desktop {
+                display: none;
+            }
+        }
     }
 
     &__caption {
+        position: relative;
         width: 100%;
         height: 42px;
         color: $text-light;
         margin-bottom: 11px;
         overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+
+        @include phone {
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        &:after {
+            content: "\02026";
+            box-sizing: content-box;
+            position: absolute;
+            top: 20px;
+            right: 0;
+            width: 3em;
+            padding-right: 5px;
+            text-align: right;
+            background-size: 100% 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+        }
     }
+
 
     &__old-price-wrap {
         font-size: 14px;
         line-height: 14px;
-        color: $text-light;
         opacity: 0.5;
         text-decoration-line: line-through;
         text-decoration-color: $text-light;
@@ -64,11 +103,16 @@
     &__price-wrap {
         font-size: 24px;
         line-height: 24px;
-        color: $text-light;
     }
 
     &__button {
-        @include button;
+        @include button(10px);
         margin-right: 23px;
+
+        @include phone {
+            @include button(9px);
+            margin-right: 0;
+        }
     }
+
 }
