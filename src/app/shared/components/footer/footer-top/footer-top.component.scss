@@ -22,6 +22,7 @@
     }
 
     &__content {
+        position: relative;
         display: flex;
         flex-wrap: wrap;
 
@@ -57,18 +58,29 @@
 
         }
 
-        @include phone {
-            background: $text-light;
-        }
+        //@include phone {
+        //    background: $text-light;
+        //}
     }
 
     &__container {
-        padding: 6px 0 2px 32px;
+
+        @include desktop {
+            padding: 6px 0 2px 32px;
+        }
+
+        @include tablet {
+            padding: 6px 0 2px 32px;
+        }
+
+        @include phone {
+            max-height: 0;
+        }
     }
 
     &__category-wrap {
-        padding: 12px 44px 12px 30px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        position: relative;
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
     }
 
     &__category,
@@ -84,6 +96,8 @@
         @include phone {
             position: relative;
             margin-bottom: 0;
+            height: 100%;
+            padding: 12px 44px 12px 0;
 
             &:after {
                 content: '';
@@ -101,5 +115,36 @@
     &__item {
         line-height: 16px;
         margin-bottom: 4px;
+
+        @include phone {
+            line-height: 0;
+            opacity: 0;
+        }
+    }
+
+    &__input {
+        display: none;
+    }
+
+    &__label {
+        position: absolute;
+        width: 100%;
+        height: 45px;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+    }
+
+    &__input:checked~.footer-top__container {
+        max-height: 100%;
+        background: $text-light;
+        padding: 12px 0 12px;
+    }
+
+    &__input:checked~.footer-top__container .footer-top__item {
+        opacity: 1;
+        line-height: 16px;
+        margin-bottom: 4px;
+        padding-left: 30px;
     }
 }
