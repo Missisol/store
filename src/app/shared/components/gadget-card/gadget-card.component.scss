@@ -48,15 +48,15 @@
     }
 
     &__amount {
-        background: #DCEBFA;
+        background: $gadget-light;
         border-radius: 4px;
-        color: #2988E0;
+        color: $gadget-dark;
         padding: 6px 9px;
 
         @include desktop {
             &:hover {
                 color: $white;
-                background: #2988E0;
+                background: $gadget-dark;
                 opacity: 0.7;
             }
         }
@@ -64,7 +64,7 @@
         @include tablet {
             &:hover {
                 color: $white;
-                background: #2988E0;
+                background: $gadget-dark;
                 opacity: 0.7;
             }
         }
