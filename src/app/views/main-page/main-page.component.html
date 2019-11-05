@@ -18,14 +18,10 @@
         Популярные товары
     </h2>
     <div class="goods__container">
-        <app-product-card></app-product-card>
-        <app-product-card></app-product-card>
-        <app-product-card></app-product-card>
-        <app-product-card></app-product-card>
-        <app-product-card></app-product-card>
-        <app-product-card></app-product-card>
-        <app-product-card></app-product-card>
-        <app-product-card></app-product-card>
+        <app-product-card
+            *ngFor="let card of cards"
+            [card]="card"
+        ></app-product-card>
     </div>
 </div>
 
@@ -85,10 +81,10 @@
         Новинки
     </h2>
     <div class="goods__container">
-        <app-product-card></app-product-card>
-        <app-product-card></app-product-card>
-        <app-product-card></app-product-card>
-        <app-product-card></app-product-card>
+        <app-product-card
+                *ngFor="let card of newCards"
+                [card]="card"
+        ></app-product-card>
     </div>
 </div>
 
@@ -97,12 +93,10 @@
         Гаджеты
     </h2>
     <div class="gadgets__container">
-        <app-gadget-card></app-gadget-card>
-        <app-gadget-card></app-gadget-card>
-        <app-gadget-card></app-gadget-card>
-        <app-gadget-card></app-gadget-card>
-        <app-gadget-card></app-gadget-card>
-        <app-gadget-card></app-gadget-card>
+        <app-gadget-card
+                *ngFor="let gadget of gadgets"
+                [gadget]="gadget"
+        ></app-gadget-card>
     </div>
 </div>
 
@@ -111,10 +105,10 @@
         Недавно вы смотрели
     </h2>
     <div class="goods__container">
-        <app-product-card></app-product-card>
-        <app-product-card></app-product-card>
-        <app-product-card></app-product-card>
-        <app-product-card></app-product-card>
+        <app-product-card
+                *ngFor="let card of recentCards"
+                [card]="card"
+        ></app-product-card>
     </div>
 </div>
 

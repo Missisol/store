@@ -1,24 +1,35 @@
 <div class="card">
-    <div class="card__discount-wrap">
-        <span class="card__discount">-2000</span>
+    <div
+        class="card__discount-wrap"
+        *ngIf="card.discount.length > 0; else emptyDisc"
+    >
+        <span class="card__discount">{{ card.discount }}</span>
         &#8381;
     </div>
+    <ng-template #emptyDisc>
+        <div class="card__discount-empty"></div>
+    </ng-template>
     <a href="#">
-        <img src="https://via.placeholder.com/260x222.png"
+        <img src="{{ card.imagePath }}"
              alt="photo" class="card__photo card__photo_desktop">
-        <img src="https://via.placeholder.com/222x160.png"
+        <img src="{{ card.imagePhonePath }}"
              alt="photo" class="card__photo card__photo_phone">
         <div class="card__caption">
-            Apple iPhone 11 128 ГБ белый Apple iPhone 11 12ый 11 128 ГБ Apple ff iPhone 11 12ый 11 128 ГБ
+            {{ card.caption }}
         </div>
     </a>
     <div class="card__old-price-wrap">
-        <span class="card__old-price">113999</span>
-        &#8381;
+        <span class="card__old-price">{{ card.oldPrice }}</span>
+        <span
+            *ngIf="card.oldPrice.length > 0; else emptyPrice"
+        >&#8381;</span>
+        <ng-template #emptyPrice>
+            <div class="card__old-price-empty"></div>
+        </ng-template>
     </div>
     <div class="card__bottom">
         <div class="card__price-wrap">
-            <span class="card__price">64990</span>
+            <span class="card__price">{{ card.price }}</span>
             &#8381;
         </div>
         <button class="card__button">В корзину</button>
