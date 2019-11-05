@@ -25,6 +25,7 @@
     }
 
     @include phone {
+        margin-top: 60px;
         height: 57px;
         padding-left: calc((100% - #{$container-phone-width}) / 2);
 
