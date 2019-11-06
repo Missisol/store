@@ -14,12 +14,14 @@ RUN ng build
 
 FROM nginx:alpine
 
-COPY --from=build /app/dist /www/public_html
+COPY --from=build /app/dist/megapolis-frontend /www/public_html
 
 COPY conf.d/ /etc/nginx/conf.d/
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
+COPY --from=build /app/docker-entrypoint.sh /docker-entrypoint.sh
+
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
