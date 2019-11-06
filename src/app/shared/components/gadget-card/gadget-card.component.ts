@@ -1,18 +1,19 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Gadget} from '@views/main-page/main-page.component';
+import { Component, Input, OnInit } from '@angular/core';
+import { IGadget } from '@shared/interfaces/store';
 
 @Component({
-  selector: 'app-gadget-card',
-  templateUrl: './gadget-card.component.html',
-  styleUrls: ['./gadget-card.component.scss']
+    selector   : 'app-gadget-card',
+    templateUrl: './gadget-card.component.html',
+    styleUrls  : ['./gadget-card.component.scss']
 })
 export class GadgetCardComponent implements OnInit {
-  
-  @Input() gadget: Gadget
 
-  constructor() { }
+    @Input() gadget: IGadget;
 
-  ngOnInit() {
-  }
+    constructor() {
+    }
+
+    ngOnInit() {
+    }
 
 }
