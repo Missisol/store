@@ -128,6 +128,44 @@ export class MainPageComponent implements OnInit {
             },
             price: 64990
         },
+        {
+            discount: '-2000',
+            model: {
+                category: {
+                    name: 'Телефон'
+                },
+                photo: {
+                    img: 'https://via.placeholder.com/260x222.png'
+                }
+            },
+            memory: {
+                name: '64Гб'
+            },
+            name: 'Apple iPhone 11 128 ГБ белый',
+            color: {
+                name: 'золотой'
+            },
+            price: 64990
+        },
+        {
+            discount: '-2000',
+            model: {
+                category: {
+                    name: 'Телефон'
+                },
+                photo: {
+                    img: 'https://via.placeholder.com/260x222.png'
+                }
+            },
+            memory: {
+                name: '64Гб'
+            },
+            name: 'Apple iPhone 11 128 ГБ белый',
+            color: {
+                name: 'золотой'
+            },
+            price: 64990
+        },
     ];
 
     gadgets: IGadget[] = [
@@ -187,7 +225,7 @@ export class MainPageComponent implements OnInit {
         this.loading = true;
         this.productsService.getPopularCards()
             .subscribe( cards => {
-                console.log('resp', cards);
+                console.log('res', cards);
 
                 this.cards = cards;
                 this.loading = false;
@@ -200,7 +238,7 @@ export class MainPageComponent implements OnInit {
         this.loading = true;
         this.productsService.getNewCards()
             .subscribe(newCards => {
-                console.log('resp', newCards);
+                console.log('res', newCards);
 
                 this.newCards = newCards;
                 this.loading = false;

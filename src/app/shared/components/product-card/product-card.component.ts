@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { ICard } from '@shared/interfaces/store';
+import {ICard} from '@shared/interfaces/store';
 
 @Component({
   selector: 'app-product-card',

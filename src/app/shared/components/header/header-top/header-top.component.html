@@ -5,10 +5,9 @@
             <img src="../../../../../assets/images/header/logo.svg" alt="logo" class="top__logo">
         </a>
         <nav class="top__menu">
-            <a href="#" class="top__link">Акции</a>
-            <a href="#" class="top__link">Магазин</a>
-            <a href="#" class="top__link">Контакты</a>
-            <a href="#" class="top__link">Личный кабинет</a>
+            <div *ngFor="let item of topMenuItems">
+                <a href="{{ item.url }}" class="top__link">{{ item.name |  titlecase }}</a>
+            </div>
         </nav>
         <div class="top__cart-wrap">
             <img src="../../../../../assets/images/header/cart.svg" alt="cart" class="top__cart">
@@ -25,13 +24,9 @@
             <img src="../../../../../assets/images/header/close.svg" alt="close" class="nav__close">
         </li>
         <li class="nav__user-wrap">
-            <a href="#">
-                <img src="../../../../../assets/images/header/user.svg" alt="user" class="nav__user">
-            </a>
+            <img src="../../../../../assets/images/header/user.svg" alt="user" class="nav__user">
         </li>
-        <li>
-            <div class="nav__button">Войти</div>
-        </li>
+        <li><a class="nav__button" href="#">Войти</a></li>
         <li><a class="top__link" href="#">Акции</a></li>
         <li><a class="top__link" href="#">Магазин</a></li>
         <li><a class="top__link" href="#">Контакты</a></li>

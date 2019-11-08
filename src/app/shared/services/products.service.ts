@@ -22,7 +22,7 @@ export class ProductsService {
   }
   // TODO remove this temporary solution
   getNewCards(): Observable<ICard[]> {
-    return this.http.get<IResponse<ICard[]>>('http://api-megapolis.amberlight.io/products/popular/')
+    return this.http.get<IResponse<ICard[]>>('http://api-megapolis.amberlight.io/products/product/')
     .pipe(
       map(res => res.results),
       catchError(error => {
