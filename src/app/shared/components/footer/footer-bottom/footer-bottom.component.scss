@@ -65,7 +65,7 @@
             width: 40px;
 
             &:hover .footer-bottom__icon {
-                fill: $violet;
+                color: $violet;
             };
         }
 
@@ -73,13 +73,12 @@
             width: 34px;
 
             &:hover .footer-bottom__icon {
-                stroke: $violet;
+                color: $violet;
             };
         }
     }
 
     &__icon {
-        fill: $white;
-        stroke: $text-light;
+        color: $text-light;
     }
 }

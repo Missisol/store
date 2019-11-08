@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     width: 260px;
+    height: 360px;
 
     @include desktop {
         margin-bottom: 50px;
@@ -16,6 +17,7 @@
 
     @include phone {
         width: 222px;
+        height: 288px;
         margin-bottom: 36px;
     }
 
@@ -47,26 +49,36 @@
         }
     }
 
+    &__product-link {
+        color: $text-light;
+    }
+
     &__photo {
         width: 100%;
         margin-bottom: 12px;
 
         @include desktop {
-            &_phone {
-                display: none;
-            }
+            height: 222px;
+
+            //&_phone {
+            //    display: none;
+            //}
         }
 
         @include tablet {
-            &_phone {
-                display: none;
-            }
+            height: 222px;
+
+            //&_phone {
+            //    display: none;
+            //}
         }
 
         @include phone {
-            &_desktop {
-                display: none;
-            }
+            height: 160px;
+
+            //&_desktop {
+            //    display: none;
+            //}
         }
     }
 

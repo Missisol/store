@@ -17,13 +17,19 @@
     <h2 class="goods__title">
         Популярные товары
     </h2>
-    <div class="goods__container">
-        <app-product-card
-            *ngFor="let card of cards"
-            [card]="card"
-        ></app-product-card>
+    <div *ngIf="!loading; else loadingBlock1">
+        <div class="goods__container">
+            <app-product-card
+                *ngFor="let card of cards"
+                [card]="card"
+            ></app-product-card>
+        </div>
     </div>
 </div>
+
+<ng-template #loadingBlock1>
+    <p>Loading...</p>
+</ng-template>
 
 <div class="category">
     <div class="category__block category__block_one">
@@ -80,13 +86,19 @@
     <h2 class="goods__title">
         Новинки
     </h2>
-    <div class="goods__container">
-        <app-product-card
+    <div *ngIf="!loading; else loadingBlock2">
+        <div class="goods__container">
+            <app-product-card
                 *ngFor="let card of newCards"
                 [card]="card"
-        ></app-product-card>
+            ></app-product-card>
+        </div>
     </div>
 </div>
+
+<ng-template #loadingBlock2>
+    <p>Loading...</p>
+</ng-template>
 
 <div class="gadgets container">
     <h2 class="gadgets__title">
@@ -94,8 +106,8 @@
     </h2>
     <div class="gadgets__container">
         <app-gadget-card
-                *ngFor="let gadget of gadgets"
-                [gadget]="gadget"
+            *ngFor="let gadget of gadgets"
+            [gadget]="gadget"
         ></app-gadget-card>
     </div>
 </div>
@@ -106,8 +118,8 @@
     </h2>
     <div class="goods__container">
         <app-product-card
-                *ngFor="let card of recentCards"
-                [card]="card"
+            *ngFor="let card of recentCards"
+            [card]="card"
         ></app-product-card>
     </div>
 </div>

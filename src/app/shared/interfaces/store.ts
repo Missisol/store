@@ -7,10 +7,26 @@ export interface IGadget {
 }
 
 export interface ICard {
-    discount: string;
-    imagePath: string;
-    imagePhonePath: string;
-    caption: string;
-    oldPrice: string;
-    price: string;
+    discount?: string;
+    model: {
+        category: {
+            name: string;
+        },
+        photo: {
+            img: string;
+        }
+    };
+    memory: {
+        name: string
+    };
+    name: string;
+    color: {
+        name: string;
+    };
+    oldPrice?: string;
+    price: number;
+}
+
+export interface IResponse<T> {
+    results: T;
 }
