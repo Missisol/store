@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {IMenu} from '@shared/interfaces/menu';
+import {MenuService} from '@shared/services/menu.service';
 
 @Component({
   selector: 'app-header-bottom',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderBottomComponent implements OnInit {
 
-  constructor() { }
+  bottomMenuItems: IMenu[];
+
+  constructor(private menuService: MenuService) { }
 
   ngOnInit() {
+    this.getBottomMenu();
   }
 
+  getBottomMenu() {
+    this.menuService.getBottomMenu()
+      .subscribe(res => {
+        console.log('response', res);
+        this.bottomMenuItems = res;
+      });
+  }
 }

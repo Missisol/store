@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ITopMenu} from '@shared/interfaces/menu';
-import {HttpClient} from '@angular/common/http';
+import {IMenu} from '@shared/interfaces/menu';
 import {MenuService} from '@shared/services/menu.service';
 
 @Component({
@@ -10,7 +9,7 @@ import {MenuService} from '@shared/services/menu.service';
 })
 export class HeaderTopComponent implements OnInit {
 
-  topMenuItems: ITopMenu[];
+  topMenuItems: IMenu[];
 
   constructor(private menuService: MenuService) {
   }
@@ -26,5 +25,4 @@ export class HeaderTopComponent implements OnInit {
         this.topMenuItems = res;
       });
   }
-
 }

@@ -1,4 +1,4 @@
-export interface ITopMenu {
+export interface IMenu {
   name: string;
   url: string;
 }
