@@ -25,9 +25,9 @@
     </a>
 </div>
 <div class="bottom bottom_phone">
-    <div class="bottom__scroll"
-         *ngFor="let item of bottomMenuItems"
-    >
-        <a href="{{ item.url }}" class="bottom__category">{{ item.name | titlecase }}</a>
+    <div class="bottom__scroll">
+        <div *ngFor="let item of bottomMenuItems">
+            <a href="{{ item.url }}" class="bottom__category">{{ item.name }}</a>
+        </div>
     </div>
 </div>

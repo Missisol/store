@@ -210,9 +210,10 @@
         }
 
         @include phone {
-            width: 80%;
+            width: 90%;
             height: 221px;
             margin: 0 auto;
+            padding: 16px 0;
         }
 
         &_one {
@@ -298,7 +299,7 @@
         }
 
         @include phone {
-            width: 60%;
+            width: 50%;
         }
     }
 
@@ -341,5 +342,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+
+        @include phone {
+            justify-content: center;
+        }
     }
 }

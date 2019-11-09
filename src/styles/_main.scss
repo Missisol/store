@@ -42,9 +42,11 @@ body {
 
     @include tablet {
         width: $container-tablet-width;
+        //max-width: 80%;
     }
 
     @include phone {
-        width: $container-phone-width;
+        //width: $container-phone-width;
+        max-width: 80%;
     }
 }
