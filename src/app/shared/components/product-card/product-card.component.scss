@@ -59,26 +59,14 @@
 
         @include desktop {
             height: 222px;
-
-            //&_phone {
-            //    display: none;
-            //}
         }
 
         @include tablet {
             height: 222px;
-
-            //&_phone {
-            //    display: none;
-            //}
         }
 
         @include phone {
             height: 160px;
-
-            //&_desktop {
-            //    display: none;
-            //}
         }
     }
 
@@ -93,19 +81,6 @@
         @include phone {
             font-size: 14px;
             line-height: 20px;
-        }
-
-        &:after {
-            content: "\02026";
-            box-sizing: content-box;
-            position: absolute;
-            top: 20px;
-            right: 0;
-            width: 3em;
-            padding-right: 5px;
-            text-align: right;
-            background-size: 100% 100%;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
         }
     }
 

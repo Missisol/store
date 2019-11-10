@@ -77,18 +77,24 @@
     &__img {
 
         @include desktop {
+
+            &_tablet,
             &_phone {
                 display: none;
             }
         }
 
         @include tablet {
+
+            &_desktop,
             &_phone {
                 display: none;
             }
         }
 
         @include phone {
+
+            &_tablet,
             &_desktop {
                 display: none;
             }

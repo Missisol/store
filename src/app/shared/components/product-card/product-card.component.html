@@ -13,9 +13,7 @@
         <img src="{{ card.model.photo.img }}"
              alt="photo" class="card__photo">
         <div class="card__caption">
-            {{ card.model.category.name }}
-            &nbsp;{{ card.name }}&nbsp;{{ card.memory.name }}Гб
-            &nbsp;{{ card.color.name }}&nbsp;
+            {{ [card.model.category.name, card.name, card.memory.name, 'Гб', card.color.name].join(' ') | truncate:['30', '...']}}
         </div>
     </a>
     <div class="card__old-price-wrap"
