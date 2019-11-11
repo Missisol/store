@@ -26,10 +26,10 @@
         <div class="nav__user-wrap">
             <img src="../../../../../assets/images/header/user.svg" alt="user" class="nav__user">
         </div>
-        <div *ngFor="let item of topMenuItems.reverse()">
-            <a
-                href="{{ item.url }}"
-                [ngClass]="{
+        <div class="nav__items-wrap">
+            <a *ngFor="let item of topMenuItems"
+               href="{{ item.url }}"
+               [ngClass]="{
                 nav__button: item.name.toLowerCase() === 'личный кабинет',
                 top__link: item.name.toLowerCase() !== 'личный кабинет'
                 }"

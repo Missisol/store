@@ -96,6 +96,7 @@
             font-size: 18px;
             line-height: 21px;
             margin-bottom: 10px;
+            height: auto;
         }
     }
 
@@ -230,5 +231,10 @@
 
     &__check:checked ~ .nav__menu {
         transform: translateX(0);
+    }
+
+    &__items-wrap {
+        display: flex;
+        flex-direction: column-reverse;
     }
 }
