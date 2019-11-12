@@ -1,12 +1,12 @@
 <div class="top">
     <div class="top__inner container">
         <img src="../../../../../assets/images/header/burger-menu.svg" alt="burger" class="top__burger">
-        <a href="#">
+        <a href="/">
             <img src="../../../../../assets/images/header/logo.svg" alt="logo" class="top__logo">
         </a>
         <nav class="top__menu">
             <div *ngFor="let item of topMenuItems">
-                <a href="{{ item.url }}" class="top__link">{{ item.name |  titlecase }}</a>
+                <a href="{{ item.url }}" class="top__link">{{ item.name |  capitalize }}</a>
             </div>
         </nav>
         <div class="top__cart-wrap">
@@ -34,7 +34,7 @@
                 top__link: item.name.toLowerCase() !== 'личный кабинет'
                 }"
             >
-                {{ item.name.toLowerCase() !== 'личный кабинет' ? (item.name | titlecase) : 'Войти' }}
+                {{ item.name.toLowerCase() !== 'личный кабинет' ? (item.name | capitalize) : 'Войти' }}
             </a>
         </div>
     </div>
