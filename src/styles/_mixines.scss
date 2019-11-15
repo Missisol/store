@@ -2,74 +2,86 @@
 
 // Mixins for media
 @mixin desktop {
-    @media screen and (min-width: $desktop-width) {
-        @content
-    }
+  @media screen and (min-width: $desktop-width) {
+    @content
+  }
 }
 
 @mixin tablet {
-    @media screen and (min-width: $tablet-width) and (max-width: $desktop-width - 1px) {
-        @content
-    }
+  @media screen and (min-width: $tablet-width) and (max-width: $desktop-width - 1px) {
+    @content
+  }
 }
 
 @mixin phone {
-    @media screen and (max-width: $tablet-width - 1px) {
-        @content
-    }
+  @media screen and (max-width: $tablet-width - 1px) {
+    @content
+  }
 }
 
 @mixin h1-desktop {
-    font-size: 72px;
-    line-height: 72px;
-    font-weight: bold;
+  font-size: 72px;
+  line-height: 72px;
+  font-weight: bold;
 }
 
 @mixin h2-desktop {
-    font-size: 36px;
-    line-height: 43px;
-    font-weight: 300;
+  font-size: 36px;
+  line-height: 43px;
+  font-weight: 300;
 }
 
 @mixin h4-desktop {
-    font-size: 32px;
-    font-weight: bold;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 @mixin h3-desktop {
-    font-size: 20px;
-    font-weight: 300;
+  font-size: 20px;
+  font-weight: 300;
 }
 
-@mixin button($padding-top) {
-    padding: $padding-top 12px;
-    border-radius: 4px;
+@mixin button($padding-top, $background, $font) {
+  padding: $padding-top 12px;
+  border-radius: 4px;
+  background: $background;
+  font-size: $font;
+  line-height: $font;
+  cursor: pointer;
+  border: none;
+
+  @if $background == $rose {
+    color: $violet;
+  } @else if $background == $violet {
+    color: $white;
+  }
+
+  @include desktop {
+    &:hover {
+      @include button-hover($background)
+    }
+  }
+
+  @include tablet {
+    &:hover {
+      @include button-hover($background)
+    }
+  }
+}
+
+@mixin button-hover($background) {
+  @if $background == $rose {
+    color: $white;
+    background: $violet;
+    opacity: 0.6;
+  } @else if $background == $violet {
     color: $violet;
     background: $rose;
-    font-size: 14px;
-    line-height: 14px;
-    cursor: pointer;
-    border: none;
-
-    @include desktop {
-        &:hover {
-            color: $white;
-            background: $violet;
-            opacity: 0.6;
-        }
-    }
-
-    @include tablet {
-        &:hover {
-            color: $white;
-            background: $violet;
-            opacity: 0.6;
-        }
-    }
+  }
 }
 
 @mixin block-title {
-    text-align: center;
-    @include h2-desktop;
-    margin-bottom: 20px;
+  text-align: center;
+  @include h2-desktop;
+  margin-bottom: 20px;
 }

@@ -15,6 +15,7 @@
     </div>
 </div>
 
+
 <div class="goods container">
     <h2 class="goods__title">
         Популярные товары
@@ -22,8 +23,9 @@
     <div *ngIf="!loading; else loadingBlock1">
         <div class="goods__container">
             <app-product-card
-                *ngFor="let card of cards"
-                [card]="card"
+                    *ngFor="let card of cards"
+                    [card]="card"
+                    (cardClick)="addToCart($event)"
             ></app-product-card>
         </div>
     </div>
@@ -33,72 +35,80 @@
     <p>Loading...</p>
 </ng-template>
 
-<div class="category">
-    <div class="category__block category__block_one">
-        <section class="category__content category__content_one">
-            <div class="category__inner-wrap">
-                <h4 class="category__title">AirPods </h4>
-                <div class="category__text">
-                    Больше звука. Больше невесомости.
+<div *ngIf="!loading; else loadingBlock2">
+    <div class="category category__container category_desktop">
+        <section class="category__block"
+             *ngFor="let category of categories"
+             [ngStyle]="{
+                background: category.background
+             }"
+        >
+            <div class="category__content"
+                 [ngStyle]="{
+                    background: 'url(' + category.img + ') bottom right no-repeat',
+                    backgroundSize: 'contain'
+                    }"
+            >
+                <div class="category__inner-wrap">
+                    <h4 class="category__title">{{ category.title }}</h4>
+                    <div class="category__text">
+                        {{ category.text }}
+                    </div>
+                    <div class="category__button">Выбрать</div>
                 </div>
-                <div class="category__button">Выбрать</div>
+                <div class="category__price">от {{ category.price }} &#8381;</div>
             </div>
-            <div class="category__price">от 13 500 &#8381;</div>
-        </section>
-    </div>
-    <div class="category__block category__block_two">
-        <section class="category__content category__content_two">
-            <div class="category__inner-wrap">
-                <h4 class="category__title">AppleWatch</h4>
-                <div class="category__text">
-                    Таких часов вы еще не видели.
-                </div>
-                <div class="category__button">Выбрать</div>
-            </div>
-            <div class="category__price">от 24 500 &#8381;</div>
-        </section>
-    </div>
-    <div class="category__block category__block_three">
-        <section class="category__content category__content_three">
-            <div class="category__inner-wrap">
-                <h4 class="category__title">AppleTV</h4>
-                <div class="category__text">
-                    Телевидение. Наше все.
-                </div>
-                <div class="category__button">Выбрать</div>
-            </div>
-            <div class="category__price">от 24 500 &#8381;</div>
-        </section>
-    </div>
-    <div class="category__block category__block_four">
-        <section class="category__content category__content_four">
-            <div class="category__inner-wrap">
-                <h4 class="category__title">Аксессуары</h4>
-                <div class="category__text">
-                    Сертифицированная продукция высокого качества.
-                </div>
-                <div class="category__button">Выбрать</div>
-            </div>
-            <div class="category__price">от 2 500 &#8381;</div>
         </section>
     </div>
 </div>
+
+<div *ngIf="!loading; else loadingBlock2">
+    <div class="category category__container category_phone">
+        <section class="category__block"
+             *ngFor="let category of categories"
+             [ngStyle]="{
+                background: category.background
+             }"
+        >
+            <div class="category__content"
+                 [ngStyle]="{
+                    background: 'url(' + category.img + ') bottom right no-repeat',
+                    backgroundSize: '210px'
+                    }"
+            >
+                <div class="category__inner-wrap">
+                    <h4 class="category__title">{{ category.title }}</h4>
+                    <div class="category__text">
+                        {{ category.text }}
+                    </div>
+                    <div class="category__button">Выбрать</div>
+                </div>
+                <div class="category__price">от {{ category.price }} &#8381;</div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<ng-template #loadingBlock2>
+    <p>Loading...</p>
+</ng-template>
 
 <div class="goods container">
     <h2 class="goods__title">
         Новинки
     </h2>
-    <div *ngIf="!loading; else loadingBlock2">
+    <div *ngIf="!loading; else loadingBlock3">
         <div class="goods__container">
             <app-product-card
-                *ngFor="let card of newCards"
-                [card]="card"
+                    *ngFor="let card of newCards"
+                    [card]="card"
+                    (onClick)="addToCart($event)"
             ></app-product-card>
         </div>
     </div>
 </div>
 
-<ng-template #loadingBlock2>
+<ng-template #loadingBlock3>
     <p>Loading...</p>
 </ng-template>
 
@@ -108,8 +118,8 @@
     </h2>
     <div class="gadgets__container">
         <app-gadget-card
-            *ngFor="let gadget of gadgets"
-            [gadget]="gadget"
+                *ngFor="let gadget of gadgets"
+                [gadget]="gadget"
         ></app-gadget-card>
     </div>
 </div>
@@ -120,8 +130,9 @@
     </h2>
     <div class="goods__container">
         <app-product-card
-            *ngFor="let card of recentCards"
-            [card]="card"
+                *ngFor="let card of recentCards"
+                [card]="card"
+                (onClick)="addToCart($event)"
         ></app-product-card>
     </div>
 </div>

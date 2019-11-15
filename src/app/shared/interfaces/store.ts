@@ -1,3 +1,7 @@
+export interface IResponse<T> {
+    results: T;
+}
+
 export interface IGadget {
     title: string;
     imagePath: string;
@@ -7,6 +11,7 @@ export interface IGadget {
 }
 
 export interface ICard {
+    id: number;
     discount?: string;
     model: {
         category: {
@@ -25,8 +30,14 @@ export interface ICard {
     };
     oldPrice?: string;
     price: number;
+    quantity?: number;
 }
 
-export interface IResponse<T> {
-    results: T;
+export interface ICategory {
+    title: string;
+    text: string;
+    price: number;
+    background: string;
+    img: string;
 }
+

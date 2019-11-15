@@ -20,7 +20,7 @@ export class HeaderBottomComponent implements OnInit {
   getBottomMenu() {
     this.menuService.getBottomMenu()
       .subscribe(res => {
-        console.log('response', res);
+        // console.log('response', res);
         this.bottomMenuItems = res;
       });
   }

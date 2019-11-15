@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ICard} from '@shared/interfaces/store';
 
 @Component({
@@ -9,10 +9,17 @@ import {ICard} from '@shared/interfaces/store';
 export class ProductCardComponent implements OnInit {
 
   @Input() card: ICard;
+  @Output() cardClick = new EventEmitter<boolean>();
 
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  click(card) {
+    this.cardClick.emit(card);
   }
 
 }

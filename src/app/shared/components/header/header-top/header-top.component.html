@@ -9,10 +9,19 @@
                 <a href="{{ item.url }}" class="top__link">{{ item.name |  capitalize }}</a>
             </div>
         </nav>
-        <div class="top__cart-wrap">
+        <div
+                class="top__cart-wrap"
+                (click)="toggleCart($event)"
+        >
             <img src="../../../../../assets/images/header/cart.svg" alt="cart" class="top__cart">
-            <div class="top__circle"></div>
+            <div
+                    class="top__circle"
+                    [ngClass]="{
+                    hidden: isVisible
+                    }"
+            >{{ counter }}</div>
         </div>
+        <app-dropdown-cart></app-dropdown-cart>
     </div>
 </div>
 

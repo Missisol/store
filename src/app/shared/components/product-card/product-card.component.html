@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" >
     <div
         class="card__discount-wrap"
         *ngIf="card.discount && card.discount.length > 0; else emptyDisc"
@@ -33,6 +33,12 @@
                 {{ card.price }} &#8381;
             </span>
         </div>
-        <button class="card__button">В корзину</button>
+        <button
+                class="card__button"
+                id="{{ card.id }}"
+                (click)="click(card)"
+        >
+            В корзину
+        </button>
     </div>
 </div>

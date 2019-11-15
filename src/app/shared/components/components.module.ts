@@ -10,6 +10,8 @@ import {SeoComponent} from '@shared/components/seo/seo.component';
 import {GadgetCardComponent} from '@shared/components/gadget-card/gadget-card.component';
 import {ProductCardComponent} from '@shared/components/product-card/product-card.component';
 import {TruncatePipe} from '@shared/pipes/truncate.pipe';
+import {CapitalizePipe} from '@shared/pipes/capitalize.pipe';
+import { DropdownCartComponent } from './dropdown-cart/dropdown-cart.component';
 
 const components = [
   HeaderComponent,
@@ -20,13 +22,15 @@ const components = [
   FooterBottomComponent,
   SeoComponent,
   GadgetCardComponent,
-  ProductCardComponent
+  ProductCardComponent,
+  DropdownCartComponent
 ];
 
 @NgModule({
   declarations: [
     components,
-    TruncatePipe
+    TruncatePipe,
+    CapitalizePipe,
   ],
   imports: [
     CommonModule
