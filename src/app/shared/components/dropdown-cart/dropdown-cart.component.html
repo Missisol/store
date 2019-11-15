@@ -1,47 +1,55 @@
 <div class="cart hidden">
     <div class="cart__triangle"></div>
-    <div class="cart__block-items">
-        <div
-                class="cart__item"
-                *ngFor="let product of products"
-        >
-            <img src="{{ product.model.photo.img }}" alt="prod" class="cart__image">
-            <div class="cart__info-wrap">
-                <div class="cart__caption">
-                    {{ [product.model.category.name, product.name, product.memory.name, 'Гб', product.color.name].join(' ') | truncate:['50', '...']}}
-                </div>
-                <div class="cart__mini-wrap">
-                    <div class="cart__color"></div>
-                    <div class="cart__memory">
-                        {{ [product.memory.name, 'Гб'].join(' ') }}
+    <div class="cart__without-products">
+        <div class="cart__without-text">
+            В вашей корзине пока нет товаров
+        </div>
+        <button class="cart__to-cart">Перейти к покупкам</button>
+    </div>
+    <div class="cart__with-products">
+        <div class="cart__block-items">
+            <div
+                    class="cart__item"
+                    *ngFor="let product of products"
+            >
+                <img src="{{ product.model.photo.img }}" alt="prod" class="cart__image">
+                <div class="cart__info-wrap">
+                    <div class="cart__caption">
+                        {{ [product.model.category.name, product.name, product.memory.name, 'Гб', product.color.name].join(' ') | truncate:['43', '...']}}
+                    </div>
+                    <div class="cart__mini-wrap">
+                        <div class="cart__color"></div>
+                        <div class="cart__memory">
+                            {{ [product.memory.name, 'Гб'].join(' ') }}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="cart__counter-wrap">
+                <div class="cart__counter-wrap">
+                    <div
+                            class="cart__symbol"
+                            (click)="removeItem(product)"
+                    >-</div>
+                    <div class="cart__counter">{{ product.quantity }}</div>
+                    <div
+                            class="cart__symbol"
+                            (click)="addToCart(product)"
+                    >+</div>
+                </div>
                 <div
-                        class="cart__counter"
-                        (click)="addToCart(product)"
-                >+</div>
-                <div class="cart__counter">{{ product.quantity }}</div>
-                <div
-                        class="cart__counter"
-                        (click)="removeItem(product)"
-                >-</div>
-            </div>
-            <div
-                    class="cart__basket-wrap"
-                    (click)="deleteProduct(product.id)"
-            >
-                <img src="../../../../assets/images/header/basket.svg" alt="basket" class="cart__basket">
+                        class="cart__basket-wrap"
+                        (click)="deleteProduct(product.id)"
+                >
+                    <img src="../../../../assets/images/header/basket.svg" alt="basket" class="cart__basket">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="cart__total-wrap">
-        <div class="cart__title">итого</div>
-        <div class="cart__total">{{ totalSum }} &#8381;</div>
-    </div>
-    <div class="cart__button-wrap">
-        <button class="cart__checkout">Оформить</button>
-        <button class="cart__to-cart">Перейти в корзину</button>
+        <div class="cart__total-wrap">
+            <div class="cart__title">итого</div>
+            <div class="cart__total">{{ totalSum }} &#8381;</div>
+        </div>
+        <div class="cart__button-wrap">
+            <button class="cart__checkout">Оформить</button>
+            <button class="cart__to-cart">Перейти в корзину</button>
+        </div>
     </div>
 </div>

@@ -13,7 +13,7 @@ export class HeaderTopComponent implements OnInit,
 
   topMenuItems: IMenu[];
   counter = 0;
-  isVisible: boolean;
+  isVisible;
 
   constructor(
     private menuService: MenuService,
@@ -44,6 +44,6 @@ export class HeaderTopComponent implements OnInit,
 
   getTotalCount() {
     this.counter = this.cartService.getTotalCount();
-    this.counter > 0 ? this.isVisible  : !this.isVisible;
+    this.counter > 0 ? this.isVisible = 1 : this.isVisible = 0;
   }
 }
