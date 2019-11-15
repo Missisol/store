@@ -102,7 +102,7 @@
             <app-product-card
                     *ngFor="let card of newCards"
                     [card]="card"
-                    (onClick)="addToCart($event)"
+                    (cardClick)="addToCart($event)"
             ></app-product-card>
         </div>
     </div>
@@ -132,7 +132,7 @@
         <app-product-card
                 *ngFor="let card of recentCards"
                 [card]="card"
-                (onClick)="addToCart($event)"
+                (cardClick)="addToCart($event)"
         ></app-product-card>
     </div>
 </div>
