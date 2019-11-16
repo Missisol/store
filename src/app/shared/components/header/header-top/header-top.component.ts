@@ -13,7 +13,7 @@ export class HeaderTopComponent implements OnInit,
 
   topMenuItems: IMenu[];
   counter = 0;
-  isVisible;
+  isVisible = 0;
 
   constructor(
     private menuService: MenuService,

@@ -54,7 +54,7 @@ export class CartService {
     items.map(item => {
       counter += item.quantity;
     });
-    return  counter;
+    return counter;
   }
 
   deleteProduct(productId) {
@@ -92,6 +92,11 @@ export class CartService {
     const cart = document.querySelector('.cart');
     e && cart.classList.contains('hidden') ? cart.classList.remove('hidden') :
       cart.classList.add('hidden');
+  }
+
+  getItemsCount() {
+    const items = JSON.parse(localStorage.getItem(`products`));
+    return items.length;
   }
 
   clearCart() {

@@ -12,6 +12,7 @@ export class DropdownCartComponent implements OnInit,
 
   @Input() products: ICard[] = [];
   totalSum = 0;
+  totalItemsCount = 0;
 
   constructor(private cartService: CartService) {
   }
@@ -24,6 +25,7 @@ export class DropdownCartComponent implements OnInit,
   ngAfterContentChecked(): void {
     this.getItems();
     this.getTotalSum();
+    this.getItemsCount();
   }
 
   getItems() {
@@ -47,6 +49,10 @@ export class DropdownCartComponent implements OnInit,
 
   getTotalSum() {
     this.totalSum = this.cartService.getTotalSum();
+  }
+
+  getItemsCount() {
+    this.totalItemsCount = this.cartService.getItemsCount();
   }
 
 }
