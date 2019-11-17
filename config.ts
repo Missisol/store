@@ -1,3 +1,3 @@
 export default {
-    apiUrl: '//api.example.com',
+    apiUrl: '//api-megapolis.amberlight.io',
 };

@@ -1,19 +1,22 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {IMenu} from '@shared/interfaces/menu';
 import {IResponse} from '@shared/interfaces/store';
 import {Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
+import {ConfigService} from '@shared/services/config.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService {
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private config: ConfigService,
+              private http: HttpClient) { }
 
   getTopMenu(): Observable<IMenu[]> {
-    return this.http.get<IResponse<IMenu[]>>('http://api-megapolis.amberlight.io/menu/main/')
+    return this.http.get<IResponse<IMenu[]>>(`${this.config.apiUrl}/menu/main/`)
       .pipe(
         map(res => res.results),
         catchError(error => {
@@ -24,7 +27,7 @@ export class MenuService {
   }
 
   getBottomMenu(): Observable<IMenu[]> {
-    return this.http.get<IResponse<IMenu[]>>('http://api-megapolis.amberlight.io/menu/product/')
+    return this.http.get<IResponse<IMenu[]>>(`${this.config.apiUrl}/menu/product/`)
       .pipe(
         map(res => res.results),
         catchError(error => {

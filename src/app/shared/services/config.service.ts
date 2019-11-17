@@ -10,7 +10,7 @@ export class ConfigService {
         Object.assign(this, config);
     }
 
-    public apiUrl = '//api.example.com';
+    public apiUrl = config.apiUrl;
 }
 
 export function encodeQueryParams(params: object): string {
