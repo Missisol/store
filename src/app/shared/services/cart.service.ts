@@ -13,8 +13,9 @@ export class CartService {
   addToCart(product: ICard, quantity: number = 0) {
     if (!this.authService.authenticated) {
       let items = [];
-      if (localStorage.getItem(`products`)) {
-        items = JSON.parse(localStorage.getItem(`products`));
+      const products = localStorage.getItem('products');
+      if (!!products) {
+        items = JSON.parse(products);
       }
 
       const newItems = items.filter(item => item.id === product.id);
@@ -30,10 +31,36 @@ export class CartService {
           quantity: ++quantity,
         });
       }
-      // console.log(items);
       localStorage.setItem(`products`, JSON.stringify(items));
     }
   }
+
+  // TODO modified addToCart()
+  // addToCart(product: ICard, quantity: number = 1) {
+  //   if (!this.authService.authenticated) {
+  //     let items = [];
+  //     const products = localStorage.getItem('products');
+  //     if (!!products) {
+  //       items = JSON.parse(products);
+  //     }
+  //
+  //     const newItems = items.filter(item => item.id === product.id);
+  //     if (newItems.length > 0) {
+  //       items.map(item => {
+  //         if (item.id === product.id) {
+  //           item.quantity = product.quantity + quantity;
+  //         }
+  //       });
+  //     } else {
+  //       items.push({
+  //         ...product,
+  //         quantity
+  //       });
+  //     }
+  //     localStorage.setItem(`products`, JSON.stringify(items));
+  //   }
+  // }
+
 
   getItems() {
     return JSON.parse(localStorage.getItem(`products`));
